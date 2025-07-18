@@ -29,6 +29,11 @@ public class AccountController {
         return "login";
     }
 
+    @GetMapping("/")
+    public String homeRedirect() {
+        return "redirect:/account-details"; // або інша основна сторінка
+    }
+
     @GetMapping("/account-details")
     public String showAccountDetails(Model model, Principal principal) {
         String login = principal.getName();
